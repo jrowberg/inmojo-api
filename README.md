@@ -1,4 +1,4 @@
-## Inmojo API
+## InMojo API
 
 [InMojo](http://www.inmojo.com) is an excellent sales platform for open-source hardware products. However, it is missing an official API to automate order and customer management. I am hopeful that this will change and more than willing to contribute my own efforts to make it happen, but in the meantime, I've put together a Python script that uses [mechanize](https://pypi.python.org/pypi/mechanize) and [BeautifulSoup](https://pypi.python.org/pypi/beautifulsoup4) with a few other Python modules to scrape order data directly from the website into a more API-friendly SQLite database. You can also update orders with new status, tracking number, and tracking URL.
 
@@ -42,6 +42,8 @@ Using the script is pretty simple.
 5. Run `inmojo_scrapi.py initialize` to get all existing sale records in your account so far
 6. Run `inmojo_scrapi.py update` from time to time to get all new or updated sale records
 7. Use the various *get* commands as desired to help integrate with any other tools you use
+
+Output in JSON format give you a structured list where each sale records includes items as a sub-object. The CSV output is broken apart into either a sale list or a line item detail list (line items include order numbers for correlating data later).
 
 ### "ScrAPI" Limitations
 
